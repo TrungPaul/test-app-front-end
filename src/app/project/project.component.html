@@ -1,0 +1,26 @@
+<app-layout></app-layout>
+<div style="margin-left:25%">
+    <div class="w3-container" style="background: gainsboro;">
+        <h1>Project</h1>
+    </div>
+    <div class="row p-3" style="margin-left: 50px;">
+        <a routerLink="projects/add" class="btn btn-sm btn-success">Thêm mới</a>
+    </div>
+    <div class='row' style="margin-left: 35px;">
+        <div class="col-4 my-2" *ngFor='let project of projects'>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h3 class="card-title">{{project.name}}</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">Deadline : {{project.deadline}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Type: {{project.type}}</h6>
+                    <p class="card-text">Information: {{project.information}}</p>
+                    <p class="card-text">Status: {{project.status}}</p>
+                    <button type="button" class="btn btn-sm btn-primary mx-1">
+                        Sửa</button>
+                    <button type="button" (click)="removeProject(project)" class="btn btn-sm btn-danger mx-1">
+                        Xóa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
